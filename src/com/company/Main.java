@@ -42,34 +42,31 @@ public class Main {
         int time = input.nextInt();
         if (time <= 12 && time >= 6) {
             System.out.println("Good Morning, Sunshine!");
-        }
-        if (time >= 13 && time <= 19) {
+        } else if (time >= 13 && time <= 19) {
             System.out.println("Good Afternoon! Work hard!");
-        }
-        if (time >= 20 && time <= 24) {
+        } else if (time >= 20 && time <= 24) {
             System.out.println("Good evening! Get some rest!");
+        } else {
+            System.out.println("Your time is undefined. Check your clock!");
         }
     }
 
     static void practicalTaskNo3() {
-        int day = 25;
-        int month = 1;
-        int year = 2021;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please write the day: ");
+        int day = input.nextInt();
+        System.out.println("Please write the month: ");
+        int month = input.nextInt();
+        System.out.println("Please write the year: ");
+        int year = input.nextInt();
         if (day >= 1 && day <= 31 && month >= 1 && month <= 12 && year >= 1000 && year <= 2030) {
             System.out.println(year + "/" + month + "/" + day);
         } else {
             System.out.println("Information about date isn't correct.");
         }
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please write the day: ");
-        int userDay = input.nextInt();
-        System.out.println("Please write the month: ");
-        int userMonth = input.nextInt();
-        System.out.println("Please write the year: ");
-        int userYear = input.nextInt();
         System.out.println("Please select the date formatting. 1 - YYYY/MM/DD, 2 - YYYY.MM.DD: ");
         int userDateFormat = input.nextInt();
-        System.out.println((userDateFormat == 1) ? userYear + "/" + userMonth + "/" + userDay : userYear + "." + userMonth + "." + userDay);
+        System.out.println((userDateFormat == 1) ? year + "/" + month + "/" + day : year + "." + month + "." + day);
 
     }
 
@@ -121,13 +118,11 @@ public class Main {
         } else {
             System.out.println("Working hours are incorrect.");
         }
-        int sal = 8 * 10;
-
         if (workingHoursInDay <= 8 && workingHoursInDay > 0) {
             System.out.println("Your salary will be " + workingHoursInDay * 10 + " eur.");
         }
         if (workingHoursInDay > 8) {
-            System.out.println("Your salary will be " + (sal + ((workingHoursInDay - 8) * 15)) + " eur.");
+            System.out.println("Your salary will be " + (8 * 10 + ((workingHoursInDay - 8) * 15)) + " eur.");
         }
 
     }
